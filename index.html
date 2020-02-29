@@ -74,11 +74,11 @@
           if(document.querySelector('#arvideo').muted == true){
             document.querySelector('#arvideo').muted=false;
             document.querySelector('#arvideo').play();
-            document.querySelector('#aimage').visible= "false";
+            document.querySelector('#aimage').setAttribute('visible', false);
           } else if(document.querySelector('#arvideo').muted == false){
             document.querySelector('#arvideo').muted=true;
             document.querySelector('#arvideo').pause();
-            document.querySelector('#aimage').style.display = "true";
+            document.querySelector('#aimage').setAttribute('visible', true);
           }
           /*if(document.querySelector('#arvideo').play == true){
             document.querySelector('#arvideo').play=false;
