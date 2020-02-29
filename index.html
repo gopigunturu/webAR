@@ -40,12 +40,17 @@
             <a-assets>
               <video id="arvideo" width="320" height="176" controls="controls" preload muted="true" loop="true" src="https://gopigunturu.github.io/webAR/video/sampleVideo.mp4" 
               poster="assets/thumbnail_play2.jpg"></video>
+
+              <img id="arimage" width="320" height="176" src="assets/thumbnail_play2.jpg">
+
             </a-assets>
 
             <!-- <a-marker id="arvideomarker"  preset="hiro"> -->
             <a-marker id="arvideomarker" type='pattern' url="assets/pattern-frame.patt">
                 <!-- Using the asset management system. -->
                 <a-video vidhandler src="#arvideo" rotation="90 0 180" position="0 0 0" scale="1.77 1 1"></a-video>
+                <a-image src="#arimage" rotation="90 0 180" position="0 0 0" scale="1.77 1 1"></a-image>
+
             </a-marker>
             <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
             <a-entity camera></a-entity>
