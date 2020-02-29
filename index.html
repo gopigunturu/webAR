@@ -47,10 +47,11 @@
 
     <body style='margin : 0px; overflow: hidden;'>
 
-      <div class="video-wrapper" style="display:none;">
-
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
         <a-scene id="arscene" embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+            
+          <div class="video-wrapper" style="display:none;">
+
             <a-assets>
               <video id="arvideo" width="320" height="176" controls="controls" preload muted="true" loop="true" src="https://gopigunturu.github.io/webAR/video/sampleVideo.mp4" 
               poster="assets/thumbnail_play2.jpg"></video>
@@ -63,9 +64,10 @@
             </a-marker>
             <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
             <a-entity camera></a-entity>
-        </a-scene>
 
-      </div>
+          </div>    
+
+        </a-scene>
 
     </body>
     <script>
