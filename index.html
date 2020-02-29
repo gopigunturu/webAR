@@ -30,8 +30,25 @@
         });	    
     </script>
     
+    <style type="text/css">
+      .video-wrapper {display:none;}
+      @media (-webkit-min-device-pixel-ratio: 0) and (min-device-width:1024px) 
+      {
+       .video-wrapper { display:block!important; }
+       .video-fallback { display:none!important; }
+      }
+       @supports (-webkit-overflow-scrolling:touch) and (color:#ffffffff) {
+         div[class^=video-wrapper] { display:block!important; }
+         div[class^=video-fallback] { display:none!important; }
+       }
+       #MessageViewBody .video-wrapper { display:block!important; }
+       #MessageViewBody .video-fallback { display:none!important; }
+     </style>
+
     <body style='margin : 0px; overflow: hidden;'>
-      
+
+      <div class="video-wrapper" style="display:none;">
+
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
         <a-scene id="arscene" embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
             <a-assets>
@@ -47,6 +64,9 @@
             <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
             <a-entity camera></a-entity>
         </a-scene>
+
+      </div>
+
     </body>
     <script>
     
