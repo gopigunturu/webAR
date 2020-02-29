@@ -49,7 +49,10 @@
             <a-marker id="arvideomarker" type='pattern' url="assets/pattern-frame.patt">
                 <!-- Using the asset management system. -->
                 <a-video vidhandler src="#arvideo" rotation="90 0 180" position="0 0 0" scale="1.77 1 1"></a-video>
-                <a-image id="aimage" src="#arimage" rotation="90 0 180" position="0 0 0" scale="1.77 1 1"></a-image>
+
+                <a-entity id="aimage" >
+                  <a-image src="#arimage" rotation="90 0 180" position="0 0 0" scale="1.77 1 1"></a-image>
+                </a-entity>
 
             </a-marker>
             <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
