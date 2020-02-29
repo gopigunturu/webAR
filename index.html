@@ -35,22 +35,11 @@
             <a-assets>
                 <video id="sintel" autoplay loop="true" src="/video/sintel.mp4"></video>
             </a-assets>
-
-            <a-assets>
-                <a-asset-item id="scotchgreen" src="/assets/scotchgreen.gltf"></a-asset-item>
-            </a-assets>
             
             <a-marker id="sintelmarker" preset="hiro">
                 <!-- Using the asset management system. -->
                 <a-video vidhandler src="#sintel" rotation="90 0 180" position="0 0 0" scale="1.77 1 1"></a-video>
             </a-marker>
-
-            <a-marker id="animated-marker" type='barcode' value='6'>
-                <a-entity
-                    gltf-model="#scotchgreen"
-                    scale="2">
-                </a-entity>
-            </a-marker-->
             
             <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
             <a-entity camera></a-entity>
