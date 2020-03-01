@@ -10,6 +10,54 @@
     <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
     <script src="js/underscore.min.js"></script>
+
+    <script>
+
+      //get ID querystring - default to 1 if none
+      var markerID = getParameterByName('ID') ? getParameterByName('ID') : 1;
+
+      var ngApp = angular.module('ngApp', []);
+
+      ngApp.controller('ngController', function ngController($scope) {
+        $scope.version = "v2.4";
+
+		    // data JSON - this could be called via HTTP GET
+        var markerArray = [
+            {
+              id: '1',
+              title: 'Movie Trailer',
+              markerPattern: 'assets/pattern-frame.patt',
+              markerImg: 'assets/pattern-frame.png',
+              type: 'video',
+              content: 'https://gopigunturu.github.io/webAR/video/sampleVideo.mp4',
+              thumbnail: 'assets/thumbnail_play5.jpg'
+            },
+            {
+              id: '2',
+              title: 'Earth',
+              markerPattern: 'assets/pattern-frame.patt',
+              markerImg: 'assets/pattern-frame.png',
+              type: 'video',
+              content: 'assets/earth.mp4',
+              thumbnail: ''
+            },
+			      {
+              id: '3',
+              title: 'Kirkland\'s Artwork',
+              markerPattern: 'assets/pattern-frame.patt',
+              markerImg: 'assets/pattern-frame.png',
+              type: 'image',
+              content: 'assets/floral-image.png',
+              thumbnail: ''
+            }
+          ];
+
+          $scope.marker = _.findWhere(markerArray, {id: markerID});
+
+      });
+
+    </script>
+
     <script>
          AFRAME.registerComponent('vidhandler', {
         init: function () {
