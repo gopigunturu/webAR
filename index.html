@@ -61,7 +61,7 @@
 
           $scope.marker = _.findWhere(markerArray, {id: markerID});
 
-          console.log($scope.marker.id);
+          write($scope.marker.id);
 
       });
 
@@ -90,14 +90,14 @@
     </script>
 
 
-    <body style='margin : 0px; overflow: hidden;'>
+    <body style='margin : 0px; overflow: hidden;' ng-controller="ngController">
 
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
         <a-scene id="arscene" embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
             
 
             <a-assets>
-              <video id="arvideo" width="320" height="176" controls="controls" preload muted="true" loop="true" src="https://gopigunturu.github.io/webAR/video/sampleVideo.mp4" 
+              <video id="arvideo" width="320" height="176" controls="controls" preload muted="true" loop="true" src="{{marker.content}}" 
               poster="assets/thumbnail_play2.jpg"></video>
 
               <img id="arimage" width="320" height="176" src="assets/thumbnail_play5.jpg">
